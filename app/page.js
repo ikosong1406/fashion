@@ -3,8 +3,14 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Link from "next/link";
 import hero from "./images/hero.png";
+import { motion } from "framer-motion";
 
 import Image from "next/image";
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+};
 
 export default function Home() {
   const products = [
@@ -79,7 +85,12 @@ export default function Home() {
   return (
     <div className="">
       <Header />
-      <section className="bg-lightgreen">
+      <motion.section
+        className="bg-lightgreen"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
+      >
         <div className="container mx-auto flex flex-col-reverse md:flex-row items-center py-16 px-4">
           {/* Left Section */}
           <div className="w-full md:w-1/2 text-center md:text-left">
@@ -111,9 +122,14 @@ export default function Home() {
             />
           </div>
         </div>
-      </section>
+      </motion.section>
       {/* Best Sellers Section */}
-      <section className="py-16 bg-white">
+      <motion.section
+        className="py-16 bg-white"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
+      >
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-green mb-4">Best Sellers</h2>
           <p className="text-green mb-2">
@@ -129,10 +145,15 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Our Products Section */}
-      <section className="py-16 bg-white">
+      <motion.section
+        className="py-16 bg-white"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
+      >
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-green mb-4">Our Products</h2>
           <p className="text-green mb-2">
@@ -149,9 +170,14 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
       {/* Split Section */}
-      <section className="py-16 bg-lightgreen">
+      <motion.section
+        className="py-16 bg-lightgreen"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
+      >
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-evenly">
           {/* Left Section (Image) */}
           <div className="w-full md:w-1/2 mb-8 md:mb-0">
@@ -178,9 +204,14 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </section>
+      </motion.section>
       {/* Cards Section */}
-      <section className="py-16 bg-white">
+      <motion.section
+        className="py-16 bg-white"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUp}
+      >
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-green mb-4">
             Also for our ladies that are worried about weight…
@@ -250,7 +281,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
       <Footer />
     </div>
   );
